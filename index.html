@@ -7,6 +7,14 @@
     <link href="asset/logo1.png" rel="icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <nav class="top-nav">
@@ -25,79 +33,144 @@
     
     <nav class="main-nav">
         <div class="main-nav-container">
-            <img src="/asset/logo-Unhas.png" alt="logo-Unhas" class="logo">
-            <a href="#">Tentang Unhas</a>
-            <a href="#">Pendidikan</a>
+          <div class="logo-container">
+            <img src="/asset/logo-Unhas.png" alt="Universitas Hasanuddin" class="logo">
+          </div>
+          <div class="nav-center-links">
+            <div class="nav-center-links">
+                <div class="dropdown">
+                    <a href="#">Tentang Unhas</a>
+                    <div class="dropdown-content">
+                        <a href="#">Sejarah</a>
+                        <a href="#">Sambutan Rektor</a>
+                        <a href="#">Visi dan Misi</a>
+                        <a href="#">Struktur Organisasi</a>
+                        <a href="#">Majelis Wali Amanat</a>
+                        <a href="#">Senat Akademik</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Pendidikan</a>
+                    <div class="dropdown-content">
+                        <a href="#">Fakultas</a>
+                        <a href="#">Program Studi</a>
+                        <a href="#">Akreditasi Universitas</a>
+                        <a href="#">Akreditasi Program Studi</a>
+                        <a href="#">Kalender Akademik</a>
+                        <a href="#">Kelas Internasional</a>
+                        <a href="#">Informasi Mahasiswa</a>
+                        <a href="#">Pendaftaran</a>
+                    </div>
+                </div>
             <a href="#">Riset dan Pengembangan</a>
             <a href="#">Kemitraan Strategis</a>
-            <img src="https://www.unhas.ac.id/wp-content/plugins/sitepress-multilingual-cms/res/flags/id.png" alt="Indonesia" class="img">
-            <img src="https://www.unhas.ac.id/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png" alt="English" class="img">
+            <span class="lang-flags">
+              <img src="https://www.unhas.ac.id/wp-content/plugins/sitepress-multilingual-cms/res/flags/id.png" alt="Indonesia" class="img">
+              <img src="https://www.unhas.ac.id/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png" alt="English" class="img">
+            </span>
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <div class="content">
-        <img src="/asset/Penerimaan-Mahasiswa.jpeg" alt="" class="utama">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+    <input type="radio" name="slider" id="slide4">
+  
+    <div class="slider">
+      <input type="radio" name="slide" id="slide1" checked>
+      <input type="radio" name="slide" id="slide2">
+      <input type="radio" name="slide" id="slide3">
+      <input type="radio" name="slide" id="slide4">
+    
+      <div class="slider">
+        <div class="slides">
+          <img src="/asset/Penerimaan-Mahasiswa.jpeg" class="slide" alt="Slide 1">
+          <img src="/asset/qsword.jpg" class="slide" alt="Slide 2">
+          <img src="/asset/bg-rektorat-1.png" class="slide" alt="Slide 3">
+          <img src="/asset/Benua-Maritim.jpg" class="slide" alt="Slide 4">
         </div>
+      </div>
+    
+      <div class="navigation-dots">
+        <label for="slide1" class="dot"></label>
+        <label for="slide2" class="dot"></label>
+        <label for="slide3" class="dot"></label>
+        <label for="slide4" class="dot"></label>
+      </div>
+    
+      <div class="navigation-arrows">
+        <label for="slide3" class="arrow left">&#10094;</label>
+        <label for="slide2" class="arrow right">&#10095;</label>
+    
+        <label for="slide1" class="arrow left">&#10094;</label>
+        <label for="slide3" class="arrow right">&#10095;</label>
+    
+        <label for="slide2" class="arrow left">&#10094;</label>
+        <label for="slide1" class="arrow right">&#10095;</label>
+      </div>
+    </div>
 
-        <section class="features-section">
-            <div class="container"> <div class="features-grid">
-                    <div class="feature-item">
+        <section class="tentang-section">
+            <div class="container"> <div class="tentang-grid">
+                    <div class="tentang-item">
                         <div class="icon-title-group">
-                            <div class="feature-icon">
+                            <div class="tentang-icon">
                                 <img src="/asset/tentang.png" alt="Ikon Tentang">
                             </div>
-                            <h3 class="feature-title">TENTANG</h3>
+                            <h3 class="tentang-title">TENTANG</h3>
                         </div>
-                        <p class="feature-description">
-                            Eksplorasi Ilmu, Terangi Masa Depan; Temukan UNHAS di Sini
+                        <p class="tentang-description">
+                            Eksplorasi Ilmu, Terangi Masa Depan: Temukan UNHAS di Sini
                         </p>
-                        <a href="#" class="feature-link">Tentang Unhas</a>
+                        <a href="#" class="tentang-link">Tentang Unhas</a>
                     </div>
         
-                    <div class="feature-item">
+                    <div class="tentang-item">
                         <div class="icon-title-group">
-                             <div class="feature-icon">
+                             <div class="tentang-icon">
                                 <img src="/asset/pendidikan.png" alt="Ikon Pendidikan">
                             </div>
-                            <h3 class="feature-title">PENDIDIKAN</h3>
+                            <h3 class="tentang-title">PENDIDIKAN</h3>
                         </div>
-                        <p class="feature-description">
-                            Pintar, Terampil, dan Berdaya Saing; Pendidikan Berkualitas dari UNHAS
+                        <p class="tentang-description">
+                            Pintar, Terampil, dan Berdaya Saing: Pendidikan Berkualitas dari UNHAS
                         </p>
-                        <a href="#" class="feature-link">Pendidikan Unhas</a>
+                        <a href="#" class="tentang-link">Pendidikan Unhas</a>
                     </div>
         
-                    <div class="feature-item">
+                    <div class="tentang-item">
                         <div class="icon-title-group">
-                             <div class="feature-icon">
+                             <div class="tentang-icon">
                                 <img src="/asset/litbang.png" alt="Ikon Penelitian dan Pengembangan">
                             </div>
-                            <h3 class="feature-title">PENELITIAN DAN<br>PENGEMBANGAN</h3>
+                            <h3 class="tentang-title">PENELITIAN DAN<br>PENGEMBANGAN</h3>
                         </div>
-                        <p class="feature-description">
+                        <p class="tentang-description">
                             "Inovasi Berkualitas: Penelitian & Pengembangan UNHAS"
                         </p>
-                        <a href="#" class="feature-link">Penelitian Unhas</a>
+                        <a href="#" class="tentang-link">Penelitian Unhas</a>
                     </div>
         
-                    <div class="feature-item">
+                    <div class="tentang-item">
                         <div class="icon-title-group">
-                             <div class="feature-icon">
+                             <div class="tentang-icon">
                                 <img src="/asset/kemitraan.png" alt="Ikon Kemitraan">
                             </div>
-                            <h3 class="feature-title">KEMITRAAN</h3>
+                            <h3 class="tentang-title">KEMITRAAN</h3>
                         </div>
-                        <p class="feature-description">
+                        <p class="tentang-description">
                             "Berkolaborasi, Berkembang, Berhasil: Kemitraan Bersama UNHAS"
                         </p>
-                        <a href="#" class="feature-link">Mitra Strategis Kami</a>
+                        <a href="#" class="tentang-link">Mitra Strategis Kami</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="study-program-section">
-            <div class="container"> <h2 class="section-title">Temukan Program Studi</h2>
+        <section class="search-program-studi">
+            <div class="container"> <h2 class="search-title">Temukan Program Studi</h2>
                 <div class="search-box-container">
                     <input type="text" class="search-input" placeholder="Pencarian Program Studi">
                     <button class="search-button">Lihat semua program studi</button>
@@ -116,7 +189,7 @@
                         mendorong perubahan yang bermakna dan memupuk kolaborasi lintas disiplin. Dengan fasilitas modern dan komunitas intelektual yang dinamis, 
                         kami berupaya untuk mendorong batas-batas pengetahuan dan menciptakan solusi yang berdampak secara lokal maupun internasional.
                     </p>
-                    <a href="#" class="research-button"> <img src="/asset/litbang.png" alt="" style="height: 20px; width: 20px;">
+                    <a href="#" class="research-button"> <img src="/asset/icon.png" alt="">
                          Penelitian Kami
                     </a>
                 </div>
@@ -159,10 +232,10 @@
             </div>
         </section>
 
-        <section class="achievements-section">
-            <div class="container"> <h2 class="achievements-title">Prestasi Gemilang Universitas Hasanuddin</h2>
+        <section class="prestasi-section">
+            <div class="container"> <h2 class="prestasi-title">Prestasi Gemilang Universitas Hasanuddin</h2>
                 
-                <p class="achievements-description">
+                <p class="prestasi-description">
                     Diakui secara nasional maupun global, UNHAS berdiri sebagai mercusuar keunggulan akademik dan inovasi. 
                     Dengan banyak penghargaan dan kontribusi yang berdampak, UNHAS terus meningkatkan standar dalam pendidikan, penelitian, dan pembangunan masyarakat. 
                     Prestasi kami bergema melintasi batas, menginspirasi perubahan positif dan membentuk masa depan pendidikan tinggi.
@@ -172,7 +245,7 @@
                     <img src="/asset/THE-WUR.jpg" alt="THE World University Rankings Logo" class="ranking-logo">
                     <img src="/asset/QS-Rank.jpg" alt="QS World University Rankings Logo" class="ranking-logo">
                 </div>
-                <a href="#" class="achievements-link">Lihat Prestasi dan Penghargaan Unhas</a>
+                <a href="#" class="prestasi-link">Lihat Prestasi dan Penghargaan Unhas</a>
             </div>
         </section>
 
@@ -183,29 +256,25 @@
             </div>
             <div class="berita-grid">
               <div class="berita-item utama">
-                <img src="/asset/isi-pidato.jpg" alt="Berita utama">
+                <img src="/asset/dorong-hilirisasi.jpg" alt="Berita utama">
                 <span class="kategori">Berita Kampus</span>
                 <div class="berita-info">
-                  <span class="tanggal">Mei 6, 2025</span>
-                  <h3>Isi Pidato Penerimaan Empat Guru Besar Unhas dalam Upacara Penerimaan oleh Senat Akademik</h3>
+                  <h3>Dorong Hilirisasi dan Pengembangan SDM, Unhas Jajaki Kerja Sama dengan Huayou Indonesia dan PT. Vale</h3>
                 </div>
               </div>
               <div class="berita-kolom-kanan">
                 <div class="berita-item kecil">
-                  <img src="/asset/senat-akademik.jpg" alt="Berita 2">
+                  <img src="/asset/unhas-dan.jpg" alt="Berita 2">
                   <span class="kategori">Berita Kampus</span>
-                  <div class="berita-info">
-                    <span class="tanggal"> Mei 6, 2025</span>
-                    <h3>Senat Akademik Unhas Gelar Penerimaan Empat Anggota Baru, Perkuat Kontribusi Akademik dan Riset</h3>
+                  <div class="berita-info2">
+                    <h3>Unhas dan Pemkab PasangKayu Jalin Kemitraan untuk Pengembangan Daerah Berbasis Tridarma</h3>
                   </div>
                 </div>
                 <div class="berita-item kecil">
-                  <img src="/asset/unit-kesehatan.jpg" alt="Berita 3">
+                  <img src="/asset/unhas-tuan-rumah.jpg" alt="Berita 3">
                   <span class="kategori">Berita Kampus</span>
-                  <div class="berita-info">
-                    <span class="tanggal">
-                         Mei 6, 2025</span>
-                    <h3>Unit Kesehatan dan Keselamatan Kerja Unhas Gelar Bimbingan Teknis Kesehatan Mental</h3>
+                  <div class="berita-info2">
+                    <h3>Unhas Tuan Rumah Sosialisasi dan Bimbingan Teknis Aplikasi PERADAB bagi PTNBH se-Indonesia</h3>
                   </div>
                 </div>
               </div>
@@ -236,7 +305,7 @@
                         <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
                         <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
                 
@@ -266,7 +335,7 @@
                 <div class="footer-col footer-maps">
                     <h3 class="footer-col-title">Maps</h3>
                     <div class="map-placeholder">
-                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.25216879301!2d119.5225328147664!3d-5.145670952781337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf133368798ad7%3A0x4a4a310d2938b22!2sUniversitas%20Hasanuddin!5e0!3m2!1sid!2sid!4v1678886201090!5m2!1sid!2sid" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7947.621117626881!2d119.47906628251073!3d-5.134187023335287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbefd5b8062793d%3A0xadf1342c0dbca9c2!2sUniversitas%20Hasanuddin!5e0!3m2!1sid!2sid!4v1747138101803!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

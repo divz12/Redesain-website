@@ -4,9 +4,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  
 }
 
+/* CSS Top Navbar */
 .top-nav {
   background-color: #990000;
   padding: 10px 0;
@@ -31,6 +32,8 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
+  font-family: "Roboto";
+
 }
 
 .header {
@@ -38,44 +41,114 @@ body {
   text-align: center;
 }
 
+/* CSS Navbar */
 .main-nav {
   background-color: #c50707;
-  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
 }
 
 .main-nav-container {
-  width: 100%;
-  max-width: 1300px;
-  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 2px;
+  padding: 0 20px;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  height: 60px;
+}
+
+.nav-center-links {
+  flex: 2;
   display: flex;
   gap: 30px;
 }
 
-.main-nav a {
-  color: white;
+.nav-center-links a {
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  align-content: center;
-  
+  color: #fffefe;
+  font-family: "Roboto";
+  font-size: 18px;
 }
 
-.img {
+.lang-flags {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+img {
   height: 15px;
   width: auto;
-  margin-top: 20px;
 }
 
-.logo {
-  height: 50px;
-  width: auto;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown > a {
+  position: relative;
+  padding-right: 20px;
+}
+
+.dropdown > a::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7em;
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover > a::after {
+  content: "\f077";
+}
+
+/* CSS Foto Content */
 .content {
   height: 150vh; 
   background-color: #ffffff; 
   padding-top: 20px; 
   text-align: center;
+}
+
+input[type="radio"] {
+  display: none;
 }
 
 .utama {
@@ -84,26 +157,134 @@ body {
   margin-bottom: 50px;
 }
 
-.features-section {
+.slider {
+  width: 98%;
+  max-width: 100%;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  animation: slideAnim 20s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+@keyframes slideAnim {
+  0%    { transform: translateX(0%); }
+  20%   { transform: translateX(0%); }
+
+  25%   { transform: translateX(-100%); }
+  40%   { transform: translateX(-100%); }
+
+  45%   { transform: translateX(-200%); }
+  60%   { transform: translateX(-200%); }
+
+  65%   { transform: translateX(-300%); }
+  80%   { transform: translateX(-300%); }
+}
+
+/* DOT NAVIGATION */
+.navigation-dots {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+#slide1:checked ~ .navigation-dots label[for="slide1"],
+#slide2:checked ~ .navigation-dots label[for="slide2"],
+#slide3:checked ~ .navigation-dots label[for="slide3"] {
+  background: white;
+  border: 2px solid white;
+}
+
+/* ARROWS */
+.navigation-arrows {
+  position: absolute;
+  bottom: 50px;
+  right: 70px;
+  display: flex;
+  gap: 10px;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.459);
+  color: rgba(255, 255, 255, 0.459);
+  text-align: center;
+  line-height: 36px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Tampilkan hanya panah yang sesuai dengan slide aktif */
+#slide1:checked ~ .navigation-arrows label:nth-child(1),
+#slide1:checked ~ .navigation-arrows label:nth-child(2) { display: inline-block; }
+
+#slide2:checked ~ .navigation-arrows label:nth-child(3),
+#slide2:checked ~ .navigation-arrows label:nth-child(4) { display: inline-block; }
+
+#slide3:checked ~ .navigation-arrows label:nth-child(5),
+#slide3:checked ~ .navigation-arrows label:nth-child(6) { display: inline-block; }
+
+.navigation-arrows label {
+  display: none;
+}
+
+/* CSS Tentang */
+.tentang-section {
   padding: 60px 0;
   background-color: #ffffff; 
   font-family: Arial, sans-serif;
 }
 
-.features-section .container {
+.tentang-section .container {
    width: 90%;
    max-width: 1200px;
    margin: 0 auto;
 }
 
-.features-grid {
+.tentang-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
   gap: 40px 30px;
   justify-items: center;
 }
 
-.feature-item {
+.tentang-item {
   text-align: center;
   padding: 20px;
 }
@@ -115,19 +296,19 @@ body {
   margin-bottom: 15px;
 }
 
-.feature-icon {
+.tentang-icon {
   margin-bottom: 0;
   margin-right: 12px;
   flex-shrink: 0;
 }
 
-.feature-icon img {
+.tentang-icon img {
   width: 50px;
   height: auto;
   object-fit: contain;
 }
 
-.feature-title {
+.tentang-title {
   font-size: 1em;
   font-weight: bold;
   color: #483d8b; 
@@ -136,17 +317,19 @@ body {
   flex-shrink: 0;
   text-align: left;
   white-space: nowrap;
+  
 }
 
-.feature-description {
-  font-size: 0.9em;
-  color: #555;
+.tentang-description {
+  font-size: 15px;
+  color: #0e0e0e;
   margin-bottom: 20px;
-  text-align:justify;
+  text-align: justify;
   padding: 0 10px;
+  font-family: "Open Sans";
 }
 
-.feature-link {
+.tentang-link {
   font-size: 0.9em;
   color: #483d8b;
   text-decoration: none;
@@ -154,9 +337,10 @@ body {
   display: inline-block;
   margin-top: 10px;
   margin-right: 40%;
+  font-family: "Open Sans";
 }
 
-.feature-link:hover {
+.tentang-link:hover {
   color: #6a5acd;
   text-decoration: underline;
 }
@@ -167,12 +351,14 @@ body {
  
 }
 
-.study-program-section .section-title {
+/* Search Program Study */
+.search-program-studi .search-title {
   font-size: 1.6em;
   color: #483d8b;
   margin-bottom: 20px;
-  font-weight: bold;
-  margin-left: 100px;
+  font-weight: 700;
+  margin-right: 63%;
+  font-family: "Roboto";
 }
 
 .search-box-container {
@@ -193,7 +379,8 @@ body {
   padding: 12px 15px;
   border: none;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: 14px;
+  font-family: "Open Sans";
 }
 
 .search-input::placeholder {
@@ -208,10 +395,11 @@ body {
   border: 1px solid #ffffff;
   padding: 12px 20px;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   flex-shrink: 0;
+  font-family: "Montserrat";
 }
 
 .search-button:hover {
@@ -237,6 +425,7 @@ body {
   }
 }
 
+/* CSS Research */
 .research-section {
   padding: 50px 0;
   background-color: #ffffff;
@@ -268,29 +457,40 @@ body {
 .research-title {
   font-size: 3em;
   color: #483d8b;
-  font-weight: bold;
+  font-weight: 550;
   line-height: 1.2;
+  margin-right: 66%;
+  font-family: "Poppins";
 }
 
 .research-description {
   font-size: 18px;
-  color: #555;
+  color: #030303;
   line-height: 1.6;
   text-align: justify;
+  font-family: "Open Sans";
+  margin-bottom: 20px;
 }
 
 .research-button {
   display: inline-block;
-  background-color: #483d8b;
+  background-color: #180786;
   color: #ffffff;
   border: none;
   padding: 8px 25px;
   border-radius: 2px;
-  font-size: 1em;
+  font-size: 15px;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-bottom: 30px;
+  margin-right: 67%;
+  font-family: "Poppins";
+}
+
+.research-button img {
+  width: 13px;
+  height: auto;
 }
 
 .research-button:hover {
@@ -333,6 +533,7 @@ body {
    }
 }
 
+/* CSS Info */
 .info-cards-section {
   padding: 50px 0;
   background-color: #ffffff;
@@ -359,9 +560,10 @@ body {
 
 .card-image {
   display: block;
-  width: 100%;
-  height: 200px;
+  width: 95%;
+  height: 230px;
   object-fit: cover;
+  margin-left: 15px;
 }
 
 .card-content {
@@ -372,22 +574,24 @@ body {
 }
 
 .card-title {
-  font-size: 22px;
+  font-size: 25px;
   color: #000000;
   margin-top: 0; 
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.3;
   text-align: left;
+  font-family: "Poppins";
 }
 
 .card-description {
-  font-size: 0.9em;
-  color: #555;
+  font-size: 16px;
+  color: #141414;
   margin-bottom: 15px;
   line-height: 1.5;
   text-align: justify;
   flex-grow: 1;
+  font-family: "Open Sans";
 }
 
 .card-link {
@@ -396,7 +600,8 @@ body {
   text-decoration: none;
   transition: color 0.3s ease;
   margin-top: auto;
-  text-align: left; 
+  text-align: left;
+  font-family: "Poppins"; 
 }
 
 .card-link:hover {
@@ -412,35 +617,37 @@ body {
   }
 }
 
-.achievements-section {
+.prestasi-section {
   padding: 50px 0px;
   background-color: #ffffff; 
   font-family: Arial, sans-serif;
   text-align: center;
 }
 
-.achievements-section .container {
+.prestasi-section .container {
    width: 90%;
    max-width: 1100px;
    margin: 70px;
    margin-left: 10%;
 }
 
-.achievements-title {
-  font-size: 1.8em; 
+.prestasi-title {
+  font-size: 30px; 
   color: #483d8b;
   margin-top: 0; 
   margin-bottom: 15px;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1;
+  font-family: "Poppins";
 }
 
-.achievements-description {
-  font-size: 18px;
-  color: #555; 
+.prestasi-description {
+  font-size: 16px;
+  color: #000000; 
   margin: 30px;
   line-height: 1.6;
   max-width: 1200px;
+  font-family: "Open Sans";
 }
 
 .ranking-logos {
@@ -457,16 +664,17 @@ body {
   width: auto;
 }
 
-.achievements-link {
+.prestasi-link {
   display: inline-block;
-  font-size: 1em;
+  font-size: 15px;
   color: #483d8b;
   text-decoration: none;
   transition: color 0.3s ease;
   margin-top: 15px;
+  font-family: "Poppins";
 }
 
-.achievements-link:hover {
+.prestasi-link:hover {
   color: #6a5acd;
   text-decoration: underline;
 }
@@ -481,40 +689,42 @@ body {
   }
 }
 
-/*body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f4f7;
-  margin: 0;
-  padding: 0;
-}*/
-
+/* CSS Berita */
 .berita {
   max-width: 1100px;
-  margin: 40px auto;
+  margin: 10px auto;
   padding: 0 20px;
+  font-family: "Poppins";
 }
 
 .berita-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .berita-header h2 {
   font-size: 28px;
-  color: #1d1b60;
+  color: #252285;
+  font-weight: 600;
 }
 
 .berita-header a {
-  color: #1d1b60;
+  color: #252285;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
+  margin-right: 78%;
+  margin-top: 10px;
+  font-size: 15px;
 }
 
 .berita-grid {
   display: flex;
-  gap: 10px;
+  gap: 1px;
+  width: auto;
+  margin-top: -15px;
+  margin-bottom: -200px;
+
 }
 
 .berita-item {
@@ -524,7 +734,7 @@ body {
 }
 
 .berita-item img {
-  width: 100%;
+  width: 120%;
   height: auto;
   display: block;
 }
@@ -538,31 +748,55 @@ body {
   padding: 4px 12px;
   font-size: 12px;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .berita-info {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
+  left: 15px;
+  right: 20px;
   background: rgba(255, 255, 255, 0.8);
-  width: 100%;
-  padding: 10px 15px;
+  width: 90%;
+  padding: 10px;
 }
+
+.berita-info2 {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  width: 90%;
+  padding: 10px;
+}
+
 
 .berita-info .tanggal {
   font-size: 13px;
   color: #444;
   display: block;
   margin-bottom: 4px;
+  text-align: left;
 }
 
 .berita-info h3 {
   font-size: 16px;
   margin: 0;
   color: #111;
+  font-weight: 600;
+  text-align: left;
 }
 
-.berita-item.utama {
+.berita-info2 h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #111;
+  font-weight: 400;
+  text-align: left;
+}
+
+.berita-item .utama {
   flex: 2;
   min-height: 350px;
 }
@@ -570,15 +804,28 @@ body {
 .berita-kolom-kanan {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1.1px;
   flex: 1;
 }
 
 .berita-item.kecil {
-  min-height: 160px;
+  width: 100%;
+  height: 30%;
+}
+
+@media (max-width: 768px) {
+  .berita-grid {
+    flex-direction: column;
+  }
+
+  .berita-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 
+/* CSS Footer */
 .site-footer {
   background-color: #0a1c50;
   color: #ddd;
@@ -587,6 +834,7 @@ body {
   font-size: 0.95em;
   position: relative;
   overflow: hidden;
+  text-align: left;
 
 }
 
@@ -628,17 +876,21 @@ body {
   line-height: 1.2;
   margin-bottom: 15px;
   color: #fff;
+  text-align: left;
 }
 
 .footer-contact .footer-address {
   margin-bottom: 15px;
   line-height: 1.5;
+  font-family: "Roboto";
+  font-weight: 400;
 }
 
 .footer-contact .footer-contact-item {
   margin-bottom: 8px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .footer-contact .footer-contact-item span {
@@ -677,10 +929,13 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: left;
 }
 
 .footer-links li {
   margin-bottom: 10px;
+  font-size: 16px;
+  font-family: "Roboto";
 }
 
 .footer-links a {
@@ -699,6 +954,7 @@ body {
   color: #fff;
   margin-bottom: 15px;
   font-weight: bold;
+  text-align: left;
 }
 
 .footer-maps .map-placeholder {
@@ -717,6 +973,7 @@ body {
   color: #ddd;
   padding: 1px;
   font-size: 12px;
+  height: 50px;
 }
 
 .footer-bottom-container {
@@ -726,10 +983,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .footer-copyright {
-  margin: 20px;
+  margin: 10px;
 }
 
 @media (max-width: 992px) {
@@ -741,6 +999,7 @@ body {
   .footer-contact {
       grid-column: span 2;
       text-align: center;
+      text-align: left;
   }
 
    .footer-contact .footer-social-icons {
